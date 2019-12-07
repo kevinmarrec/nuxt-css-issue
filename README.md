@@ -19,4 +19,5 @@ and compare code source of the page and final HTML on client, you'll be able to 
 meanwhile everything is good for the `component-class` of the `MyComponent` component.
 
 All Vuetify components are using this approach to import CSS of each component, 
-making the CSS not SSR ready (no `preload`, it is injected only at runtime when page is hit).
+making the CSS not SSR ready (no `preload`, it is injected only at runtime when page is hit), causing flickering.
+Still, if the components are used in layout but not pages, there isn't issues, but I think it's cause layout has not the same chunk scope.
